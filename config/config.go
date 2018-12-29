@@ -5,9 +5,7 @@ type Config struct {
 	HttpPort int
 }
 
-func InitConfig() Config  {
-	return Config{
-		AppName: "Soctra Go",
-		HttpPort: 8080,
-	}
+var AppConfig = Config{
+	AppName: "SoctraGo",
+	HttpPort: 8080,
 }
