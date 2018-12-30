@@ -15,8 +15,9 @@ func SetupRouter(routes []routes.Route) *gin.Engine {
 
 	// loop throw the app routes array
 	for _, route := range routes {
-		r.GET(route.Path, func(c *gin.Context) {
-			c.String(http.StatusOK, "Hello World")
+		routePath := route.Path
+		r.GET(routePath, func(c *gin.Context) {
+			c.String(http.StatusOK, routePath)
 		})
 	}
 
