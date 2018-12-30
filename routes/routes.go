@@ -1,8 +1,9 @@
 package routes
 
-type Route struct {
-	Path string
-}
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
 
 var Routes = []Route{
 	{
@@ -14,4 +15,9 @@ var Routes = []Route{
 	{
 		Path: "/page3",
 	},
+}
+
+
+func (p Route) Controller(c *gin.Context) {
+	c.String(http.StatusOK, "test")
 }
