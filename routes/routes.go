@@ -1,23 +1,12 @@
 package routes
 
 import (
+	"github.com/arielhenryson/socotraGo/controllers"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
-var Routes = []Route{
-	{
-		Path: "/",
-	},
-	{
-		Path: "/page2",
-	},
-	{
-		Path: "/page3",
-	},
-}
 
-
-func (p Route) Controller(c *gin.Context) {
-	c.String(http.StatusOK, "test")
+func SetupAppRouter(r *gin.Engine)  {
+	r.GET("/", controllers.IndexCtrl)
+	r.GET("/about", controllers.AboutCtrl)
 }
